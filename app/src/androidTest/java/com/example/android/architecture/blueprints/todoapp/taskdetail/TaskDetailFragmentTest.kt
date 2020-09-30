@@ -71,14 +71,13 @@ class TaskDetailFragmentTest {
         launchFragmentInContainer<TaskDetailFragment>(bundle, R.style.AppTheme)
 
         // THEN - Task details are displayed on screen
-        // make sure that the title/description are both shown and correct
+        // make sure that the title/description are both shown and correct and the checkbox is shown checked
         onView(withId(R.id.task_detail_title_text)).check(matches(isDisplayed()))
         onView(withId(R.id.task_detail_title_text)).check(matches(withText("Completed Task")))
         onView(withId(R.id.task_detail_description_text)).check(matches(isDisplayed()))
         onView(withId(R.id.task_detail_description_text)).check(matches(withText("Testing rocks")))
         onView(withId(R.id.task_detail_complete_checkbox)).check(matches(isDisplayed()))
         onView(withId(R.id.task_detail_complete_checkbox)).check(matches(isChecked()))
-
     }
 
 }
